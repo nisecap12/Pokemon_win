@@ -1,13 +1,12 @@
 #undef UNICODE
+#include "stdafx.h"
 #include "TimerManager.h"
 #include "Timer.h"
-#include <sstream>
 
 TimerManager::TimerManager()
 {
 	m_timer = new Timer();
 }
-
 
 TimerManager::~TimerManager()
 {

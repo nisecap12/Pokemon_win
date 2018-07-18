@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\Timer">
       <UniqueIdentifier>{66aa4483-3d15-436a-9612-f07afc8d5c51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\DataManager">
+      <UniqueIdentifier>{7688d950-a491-4392-9bc6-31ba2a2e500d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
