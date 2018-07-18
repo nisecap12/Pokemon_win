@@ -1,37 +1,48 @@
 #include "stdafx.h"
 #include "NPC.h"
 
+NPC::NPC()
+{
+}
+
+NPC::~NPC()
+{
+}
+
+NPC::NPC(int _function, int _direction, int _pattern, int _searchDistance, POINT _position, SIZE _moveBoxSize)
+{
+	m_function = _function;
+	m_searchDistance = _searchDistance;
+	m_direction = _direction;
+	m_position = _position;
+	m_moveBox = _moveBoxSize;
+	m_moveBoxPosition = { 0,0 };
+	m_state = NPC_STATE::NORMAL;
+	m_pattern = _pattern;
+}
 
 void NPC::GoLeft()
 {
-	if (m_position.x > 0)
-	{
-		m_position.x--;
-	}		
+	m_position.x--;
+	m_moveBoxPosition.x--;	
 }
 
 void NPC::GoRight()
 {
-	if (m_position.x < m_x_max)
-	{
-		m_position.x++;
-	}
+	m_position.x++;
+	m_moveBoxPosition.x++;
 }
 
 void NPC::GoUp()
 {
-	if (m_position.y > 0)
-	{
-		m_position.y--;
-	}	
+	m_position.y--;
+	m_moveBoxPosition.y--;
 }
 
 void NPC::GoDown()
 {
-	if (m_position.y < m_y_max)
-	{
-		m_position.y++;
-	}
+	m_position.y++;
+	m_moveBoxPosition.y++;
 }
 
 void NPC::TurnUp()
@@ -61,13 +72,28 @@ void NPC::DoPattern()
 	//한방향 주시
 	case NPC_PATTERN::STARRING:
 	{
+		switch (m_direction)
+		{
+		case NPC_DIRECTION::UP:
+		{
+			//위방향 이미지 출력
+		}break;
 
-	}break;
+		case NPC_DIRECTION::DOWN:
+		{
+			//아래방향 이미지 출력
+		}break;
 
-	//왔다갔다
-	case NPC_PATTERN::BACK_AND_FORTH:
-	{
+		case NPC_DIRECTION::LEFT:
+		{
+			//왼방향 이미지 출력
+		}break;
 
+		case NPC_DIRECTION::RIGHT:
+		{
+			//오른방향 이미지 출력
+		}break;
+		}
 	}break;
 
 	//빙글빙글
@@ -79,13 +105,191 @@ void NPC::DoPattern()
 	//시계방향 배회
 	case NPC_PATTERN::TURN_ARROUND_CLOCKWISE:
 	{
+		switch (m_direction)
+		{
+		case NPC_DIRECTION::UP:
+		{
+			if (m_moveBoxPosition.y > 0)
+			{
+				GoUp();
+			}
+			else
+			{
+				//가로 행동반경이 폭이 1일때는 바로 아래로
+				if (m_moveBox.cx == 1)
+				{
+					TurnDown();
+				}
+				//1이 아니라면 오른쪽으로
+				else
+				{
+					TurnRight();
+					GoRight();
+				}
+			}
+		}break;
 
+		case NPC_DIRECTION::DOWN:
+		{
+			if (m_moveBoxPosition.y < m_moveBox.cy - 1)
+			{
+				GoDown();
+			}
+			else
+			{
+				//가로 행동반경이 폭이 1일때는 바로 위로
+				if (m_moveBox.cx == 1)
+				{
+					TurnUp();
+				}
+				//아니라면 왼쪽으로
+				else
+				{
+					TurnLeft();
+					GoLeft();
+				}
+			}
+		}break;
+
+		case NPC_DIRECTION::LEFT:
+		{
+			if (m_moveBoxPosition.x > 0)
+			{
+				GoLeft();
+			}
+			else
+			{
+				//세로 행동반경이 폭이 1일때는 바로 오른쪽으로
+				if (m_moveBox.cy == 1)
+				{
+					TurnRight();
+				}
+				//1이 아니라면 위로이동
+				else
+				{
+					TurnUp();
+					GoUp();
+				}
+			}
+		}break;
+
+		case NPC_DIRECTION::RIGHT:
+		{
+			if (m_moveBoxPosition.x < m_moveBox.cx - 1)
+			{
+				GoRight();
+			}
+			else
+			{
+				//세로 행동반경이 폭이 1일때는 바로 왼쪽으로
+				if (m_moveBox.cy == 1)
+				{
+					TurnLeft();
+				}
+				//1이 아니라면 아래로 이동
+				else
+				{
+					TurnDown();
+					GoDown();
+				}
+			}
+		}break;
+		}
 	}break;
 
 	//반시계방향 배회
 	case NPC_PATTERN::TURN_ARROUND_COUNTER_CLOCKWISE:
 	{
+		switch (m_direction)
+		{
+		case NPC_DIRECTION::UP:
+		{
+			if (m_moveBoxPosition.y > 0)
+			{
+				GoUp();
+			}
+			else
+			{
+				//가로 행동반경이 폭이 1일때는 바로 아래로
+				if (m_moveBox.cx == 1)
+				{
+					TurnDown();
+				}
+				//1이 아니라면 왼쪽으로
+				else
+				{
+					TurnLeft();
+					GoLeft();
+				}
+			}
+		}break;
 
+		case NPC_DIRECTION::DOWN:
+		{
+			if (m_moveBoxPosition.y < m_moveBox.cy - 1)
+			{
+				GoDown();
+			}
+			else
+			{
+				//가로 행동반경이 폭이 1일때는 바로 위로
+				if (m_moveBox.cx == 1)
+				{
+					TurnUp();
+				}
+				//아니라면 오른쪽으로
+				else
+				{
+					TurnRight();
+					GoRight();
+				}
+			}
+		}break;
+
+		case NPC_DIRECTION::LEFT:
+		{
+			if (m_moveBoxPosition.x > 0)
+			{
+				GoLeft();
+			}
+			else
+			{
+				//세로 행동반경이 폭이 1일때는 바로 오른쪽으로
+				if (m_moveBox.cy == 1)
+				{
+					TurnRight();
+				}
+				//1이 아니라면 아래로이동
+				else
+				{
+					TurnDown();
+					GoDown();
+				}
+			}
+		}break;
+
+		case NPC_DIRECTION::RIGHT:
+		{
+			if (m_moveBoxPosition.x < m_moveBox.cx - 1)
+			{
+				GoRight();
+			}
+			else
+			{
+				//세로 행동반경이 폭이 1일때는 바로 왼쪽으로
+				if (m_moveBox.cy == 1)
+				{
+					TurnLeft();
+				}
+				//1이 아니라면 위로 이동
+				else
+				{
+					TurnUp();
+					GoUp();
+				}
+			}
+		}break;
+		}
 	}break;
 
 	//유저 쫓아감
@@ -100,27 +304,32 @@ void NPC::DoScript()
 {
 }
 
-NPC::NPC()
-{
-}
-
-
-NPC::~NPC()
-{
-}
-
 void NPC::DoAction()
 {
 	switch (m_function)
 	{
+	//일반 NPC
 	case NPC_FUNCTION::NONE:
 	{
 		//대사출력
+		if (m_state == NPC_STATE::INTERACT)
+		{
+			//대화 UI호출
+			DoScript();
+		}
+		else
+		{
+			DoPattern();
+		}
 	}break;
+
+	//상점NPC
 	case NPC_FUNCTION::SHOP:
 	{
 		//상점UI 호출
 	}break;
+
+	//포켓몬센터
 	case NPC_FUNCTION::HEAL:
 	{
 		//상호작용 중이라면, 포켓몬 치료
@@ -129,11 +338,13 @@ void NPC::DoAction()
 
 		}
 	}break;
+
+	//트레이너
 	case NPC_FUNCTION::TRAINER:
 	{
 		//트레이너 행동
 		//평상시
-		if (m_state == NPC_STATE::NONE)
+		if (m_state == NPC_STATE::NORMAL)
 		{
 			//가만히 서있거나 왔다갔다
 		}
@@ -148,6 +359,8 @@ void NPC::DoAction()
 			//대사치고 배틀 시작
 		}
 	}break;
+
+	//체육관 관장
 	case NPC_FUNCTION::CHAMP:
 	{}break;
 	}

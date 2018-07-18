@@ -10,7 +10,7 @@ class Timer
 
 	unsigned long m_FPS = 0; 
 	unsigned long m_TickCount = 0;
-	float m_FPSTimeElapsed;
+	float m_FPSTimeElapsed = 0.0f;
 
 	unsigned long FPS_LIMIT = 60;
 	float m_OneTickTime = 1.0f / FPS_LIMIT;

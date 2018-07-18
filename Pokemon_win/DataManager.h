@@ -1,7 +1,5 @@
 #pragma once
 
-class Character;
-
 class DataManager
 {
 
@@ -20,7 +18,7 @@ public:
 	void Save(int _data);
 	void Load(int& _data);
 
-	void SaveTile(int _width, int _height, vector<int> _tileArray);
+	void SaveTile(int _width, int _height, std::vector<int> _tileArray);
 	void LoadTile();
 };
 
