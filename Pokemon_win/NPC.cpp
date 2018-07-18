@@ -54,6 +54,52 @@ void NPC::TurnRight()
 	m_direction = NPC_DIRECTION::RIGHT;
 }
 
+void NPC::DoPattern()
+{
+	switch (m_pattern)
+	{
+	//한방향 주시
+	case NPC_PATTERN::STARRING:
+	{
+
+	}break;
+
+	//왔다갔다
+	case NPC_PATTERN::BACK_AND_FORTH:
+	{
+
+	}break;
+
+	//빙글빙글
+	case NPC_PATTERN::TURNING:
+	{
+
+	}break;
+
+	//시계방향 배회
+	case NPC_PATTERN::TURN_ARROUND_CLOCKWISE:
+	{
+
+	}break;
+
+	//반시계방향 배회
+	case NPC_PATTERN::TURN_ARROUND_COUNTER_CLOCKWISE:
+	{
+
+	}break;
+
+	//유저 쫓아감
+	case NPC_PATTERN::CHASE:
+	{
+
+	}break;
+	}
+}
+
+void NPC::DoScript()
+{
+}
+
 NPC::NPC()
 {
 }

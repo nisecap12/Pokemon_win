@@ -148,12 +148,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DataManager.h" />
+    <ClInclude Include="NPC.h" />
+    <ClInclude Include="NPC_Script.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Pokemon_win.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
