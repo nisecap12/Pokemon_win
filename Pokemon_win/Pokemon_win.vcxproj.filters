@@ -22,9 +22,6 @@
     <Filter Include="소스 파일\NPC">
       <UniqueIdentifier>{89c9eff4-1703-40de-977a-fc4d629f67d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\ImageManager">
-      <UniqueIdentifier>{1fbce3f8-7bb7-4c65-baa1-4a70dd7a3fbb}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -44,12 +41,6 @@
     </ClInclude>
     <ClInclude Include="NPC_Script.h">
       <Filter>소스 파일\NPC</Filter>
-    </ClInclude>
-    <ClInclude Include="ImgClass.h">
-      <Filter>소스 파일\ImageManager</Filter>
-    </ClInclude>
-    <ClInclude Include="ImgMgr.h">
-      <Filter>소스 파일\ImageManager</Filter>
     </ClInclude>
     <ClInclude Include="TemplateSingletonB.h">
       <Filter>소스 파일</Filter>
@@ -73,12 +64,6 @@
     </ClCompile>
     <ClCompile Include="NPC.cpp">
       <Filter>소스 파일\NPC</Filter>
-    </ClCompile>
-    <ClCompile Include="ImgClass.cpp">
-      <Filter>소스 파일\ImageManager</Filter>
-    </ClCompile>
-    <ClCompile Include="ImgMgr.cpp">
-      <Filter>소스 파일\ImageManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

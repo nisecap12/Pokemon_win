@@ -148,8 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DataManager.h" />
-    <ClInclude Include="ImgClass.h" />
-    <ClInclude Include="ImgMgr.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="NPC_Script.h" />
     <ClInclude Include="stdafx.h" />
@@ -159,8 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataManager.cpp" />
-    <ClCompile Include="ImgClass.cpp" />
-    <ClCompile Include="ImgMgr.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Pokemon_win.cpp" />
     <ClCompile Include="stdafx.cpp">
