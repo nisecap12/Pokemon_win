@@ -1,4 +1,6 @@
 #pragma once
+#include "ImgClass.h"
+#include "NPCRenderManager.h"
 
 /*
 NPC 행동
@@ -50,7 +52,7 @@ private:
 	int m_function;			//기능
 	int m_searchDistance;	//탐색거리
 	int m_state;			//상태
-	POINT m_rootPosition;	 //NPC 원위치 (NPC가 역할 끝나면 되돌아가기위해 필요함, 필요없을수도있음)
+	
 	POINT m_position;		//NPC 위치좌표
 	int m_direction;
 	int m_pattern;			//NPC 패턴
@@ -58,6 +60,8 @@ private:
 	POINT m_moveBoxPosition; //행동박스 좌표
 	int m_actionDelay;
 	int m_actionCount;
+
+	ImgClass m_image;
 
 	int m_x_max; //맵 width
 	int m_y_max; //맵 height
@@ -76,7 +80,7 @@ private:
 
 public:
 	NPC();
-	NPC(int _function, int _direction, int _pattern, int _searchDistance, POINT _position, SIZE _moveBoxSize);
+	NPC(int _number, int _function, int _direction, int _pattern, int _searchDistance, POINT _position, SIZE _moveBoxSize);
 	~NPC();
 
 	int GetState()
@@ -103,11 +107,23 @@ public:
 		m_actionDelay = _delay;
 	}
 
+	int GetNumber()
+	{
+		return m_number;
+	}
+
+	int GetDirection()
+	{
+		return m_direction;
+	}
+
 	void DoAction();
 
 	void Render(HDC _hdc)
 	{
-		HDC imgDC = CreateCompatibleDC(_hdc);
+		NPC_RENDER_MANAGER.Render(_hdc, this);
+
+		/*HDC imgDC = CreateCompatibleDC(_hdc);
 		HBITMAP bit = (HBITMAP)LoadImage(nullptr, "policesprite.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
 		HBITMAP oldbit = SelectBitmap(imgDC, bit);
 
@@ -117,7 +133,7 @@ public:
 		int width = bm.bmWidth / 4;
 		int height = bm.bmHeight;
 
-		GdiTransparentBlt(_hdc, (m_position.x * 64), ((m_position.y + 1) * 64) - height, width, height, imgDC, 64 * m_direction, 0, width, height, RGB(255, 119, 251));
+		GdiTransparentBlt(_hdc, (m_position.x * 64), ((m_position.y + 1) * 64) - height, width, height, imgDC, 64 * m_direction, 0, width, height, RGB(255, 119, 251));*/
 
 		/*Rectangle(_hdc, (m_position.x * 64), (m_position.y * 64), (m_position.x * 64) + 64, (m_position.y * 64) + 64);
 		std::stringstream s;

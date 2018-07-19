@@ -21,8 +21,6 @@ public:
 	void	Stop();
 };
 
-
-
 class ImgClass
 {
 private:

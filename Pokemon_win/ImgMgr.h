@@ -1,8 +1,6 @@
 #pragma once
 
-#include <map>
-#include <string>
-#include <Windows.h>
+#include "stdafx.h"
 #include "ImgClass.h"
 
 #include "TemplateSingletonB.h"

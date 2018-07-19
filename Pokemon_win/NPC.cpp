@@ -9,8 +9,9 @@ NPC::~NPC()
 {
 }
 
-NPC::NPC(int _function, int _direction, int _pattern, int _searchDistance, POINT _position, SIZE _moveBoxSize)
+NPC::NPC(int _number, int _function, int _direction, int _pattern, int _searchDistance, POINT _position, SIZE _moveBoxSize)
 {
+	m_number = _number;
 	m_function = _function;
 	m_searchDistance = _searchDistance;
 	m_direction = _direction;

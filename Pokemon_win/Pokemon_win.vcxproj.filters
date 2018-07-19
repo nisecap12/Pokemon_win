@@ -51,17 +51,17 @@
     <ClInclude Include="TemplateSingletonB.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgClass.h">
-      <Filter>소스 파일\Image</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgMgr.h">
-      <Filter>소스 파일\Image</Filter>
-    </ClInclude>
     <ClInclude Include="MapManager.h">
       <Filter>소스 파일\MapManager</Filter>
     </ClInclude>
     <ClInclude Include="NPCRenderManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="ImgClass.h">
+      <Filter>소스 파일\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImgMgr.h">
+      <Filter>소스 파일\Image</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -83,17 +83,17 @@
     <ClCompile Include="NPC.cpp">
       <Filter>소스 파일\NPC</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgClass.cpp">
-      <Filter>소스 파일\Image</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgMgr.cpp">
-      <Filter>소스 파일\Image</Filter>
-    </ClCompile>
     <ClCompile Include="MapManager.cpp">
       <Filter>소스 파일\MapManager</Filter>
     </ClCompile>
     <ClCompile Include="NPCRenderManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgClass.cpp">
+      <Filter>소스 파일\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgMgr.cpp">
+      <Filter>소스 파일\Image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
