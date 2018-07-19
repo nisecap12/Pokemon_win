@@ -22,6 +22,12 @@
     <Filter Include="소스 파일\NPC">
       <UniqueIdentifier>{89c9eff4-1703-40de-977a-fc4d629f67d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Image">
+      <UniqueIdentifier>{fb2aa37a-2db1-425e-af41-28886eee2dd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\MapManager">
+      <UniqueIdentifier>{fb9eae4f-1341-4802-a9bc-41ad9ed666c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -45,6 +51,18 @@
     <ClInclude Include="TemplateSingletonB.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgClass.h">
+      <Filter>소스 파일\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgMgr.h">
+      <Filter>소스 파일\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>소스 파일\MapManager</Filter>
+    </ClInclude>
+    <ClInclude Include="NPCRenderManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -64,6 +82,18 @@
     </ClCompile>
     <ClCompile Include="NPC.cpp">
       <Filter>소스 파일\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgClass.cpp">
+      <Filter>소스 파일\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgMgr.cpp">
+      <Filter>소스 파일\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>소스 파일\MapManager</Filter>
+    </ClCompile>
+    <ClCompile Include="NPCRenderManager.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

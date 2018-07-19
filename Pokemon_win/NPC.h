@@ -40,7 +40,7 @@ enum NPC_PATTERN
 	TURN_ARROUND_CLOCKWISE, //ÁÖº¯ ½Ã°è¹æÇâ ºù±Ûºù±Û ¹èÈ¸
 	TURN_ARROUND_COUNTER_CLOCKWISE, //¹Ý½Ã°è¹æÇâ ¹èÈ¸
 	TURNING, //Á¦ÀÚ¸® ºù±Ûºù±Û
-	CHASE, //ÂÑ¾Æ¿È
+	RANDOM, //·£´ý Çàµ¿
 };
 
 class NPC
@@ -107,10 +107,22 @@ public:
 
 	void Render(HDC _hdc)
 	{
-		Rectangle(_hdc, (m_position.x * 64), (m_position.y * 64), (m_position.x * 64) + 64, (m_position.y * 64) + 64);
+		HDC imgDC = CreateCompatibleDC(_hdc);
+		HBITMAP bit = (HBITMAP)LoadImage(nullptr, "policesprite.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+		HBITMAP oldbit = SelectBitmap(imgDC, bit);
+
+		BITMAP	bm = {};
+		GetObject(bit, sizeof(BITMAP), &bm);
+
+		int width = bm.bmWidth / 4;
+		int height = bm.bmHeight;
+
+		GdiTransparentBlt(_hdc, (m_position.x * 64), ((m_position.y + 1) * 64) - height, width, height, imgDC, 64 * m_direction, 0, width, height, RGB(255, 119, 251));
+
+		/*Rectangle(_hdc, (m_position.x * 64), (m_position.y * 64), (m_position.x * 64) + 64, (m_position.y * 64) + 64);
 		std::stringstream s;
 		s << m_direction;
-		TextOut(_hdc, (m_position.x * 64)+12, (m_position.y * 64)+12, s.str().c_str(), s.str().length());
+		TextOut(_hdc, (m_position.x * 64)+12, (m_position.y * 64)+12, s.str().c_str(), s.str().length());*/
 	}
 };
 

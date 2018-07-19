@@ -69,6 +69,7 @@ void NPC::DoPattern()
 {
 	switch (m_pattern)
 	{
+
 	//한방향 주시
 	case NPC_PATTERN::STARRING:
 	{
@@ -94,12 +95,6 @@ void NPC::DoPattern()
 			//오른방향 이미지 출력
 		}break;
 		}
-	}break;
-
-	//빙글빙글
-	case NPC_PATTERN::TURNING:
-	{
-
 	}break;
 
 	//시계방향 배회
@@ -292,16 +287,74 @@ void NPC::DoPattern()
 		}
 	}break;
 
-	//유저 쫓아감
-	case NPC_PATTERN::CHASE:
+	//빙글빙글
+	case NPC_PATTERN::TURNING:
 	{
-
+		int direction = rand() % 4;
+		switch (direction)
+		{
+		case NPC_DIRECTION::UP:
+			TurnUp();
+			break;
+		case NPC_DIRECTION::DOWN:
+			TurnDown();
+			break;
+		case NPC_DIRECTION::LEFT:
+			TurnLeft();
+			break;
+		case NPC_DIRECTION::RIGHT:
+			TurnRight();
+			break;
+		}
 	}break;
+
+	case NPC_PATTERN::RANDOM:
+	{
+		int direction = rand() % 4;
+		switch (direction)
+		{
+		case NPC_DIRECTION::UP:
+		{
+			if (m_moveBoxPosition.y > 0)
+			{
+				TurnUp();
+				GoUp();
+			}
+		}break;
+		case NPC_DIRECTION::DOWN:
+		{
+			if(m_moveBoxPosition.y < m_moveBox.cy - 1)
+			{ 
+				TurnDown();
+				GoDown();
+			}
+		}break;
+		case NPC_DIRECTION::LEFT:
+		{
+			if (m_moveBoxPosition.x > 0)
+			{
+				TurnLeft();
+				GoLeft();
+			}
+		}break;
+		case NPC_DIRECTION::RIGHT:
+		{
+			if (m_moveBoxPosition.x < m_moveBox.cx - 1)
+			{
+				TurnRight();
+				GoRight();
+			}
+		}break;
+		}
+	}break;
+
 	}
 }
 
 void NPC::DoScript()
 {
+	//대사치고
+	//하던일 계속
 }
 
 void NPC::DoAction()

@@ -147,8 +147,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgClass.h" />
+    <ClInclude Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgMgr.h" />
     <ClInclude Include="DataManager.h" />
+    <ClInclude Include="MapManager.h" />
     <ClInclude Include="NPC.h" />
+    <ClInclude Include="NPCRenderManager.h" />
     <ClInclude Include="NPC_Script.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TemplateSingletonB.h" />
@@ -156,8 +160,12 @@
     <ClInclude Include="TimerManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgClass.cpp" />
+    <ClCompile Include="..\..\..\Desktop\pokemon\trunk\Pokemon_win\ImgMgr.cpp" />
     <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="NPCRenderManager.cpp" />
     <ClCompile Include="Pokemon_win.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
