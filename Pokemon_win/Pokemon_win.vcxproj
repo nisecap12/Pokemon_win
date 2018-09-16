@@ -147,34 +147,102 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BagManager.h" />
+    <ClInclude Include="BattleManager.h" />
+    <ClInclude Include="BoxUI.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="RenderManager.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Scene_Forest.h" />
+    <ClInclude Include="Scene_Info.h" />
+    <ClInclude Include="ScriptManager.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="DataManager.h" />
     <ClInclude Include="ImgClass.h" />
     <ClInclude Include="ImgMgr.h" />
+    <ClInclude Include="ItemManager.h" />
+    <ClInclude Include="KeyManager.h" />
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="NPC.h" />
-    <ClInclude Include="NPCRenderManager.h" />
-    <ClInclude Include="NPC_Script.h" />
+    <ClInclude Include="NPCManager.h" />
+    <ClInclude Include="PlayerManager.h" />
+    <ClInclude Include="PokeBox.h" />
+    <ClInclude Include="Pokedex.h" />
+    <ClInclude Include="Pokemon.h" />
+    <ClInclude Include="PokemonManager.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="Scene_Bag.h" />
+    <ClInclude Include="Scene_Battle.h" />
+    <ClInclude Include="Scene_Dictionary.h" />
+    <ClInclude Include="Scene_Intro.h" />
+    <ClInclude Include="Scene_Main.h" />
+    <ClInclude Include="Scene_Menu.h" />
+    <ClInclude Include="Scene_Pokemon.h" />
+    <ClInclude Include="Scene_Report.h" />
+    <ClInclude Include="Scene_Setting.h" />
+    <ClInclude Include="Scene_Trainer.h" />
+    <ClInclude Include="Skill.h" />
+    <ClInclude Include="SkillManager.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TemplateSingletonA.h" />
     <ClInclude Include="TemplateSingletonB.h" />
+    <ClInclude Include="TextUI.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BagManager.cpp" />
+    <ClCompile Include="BattleManager.cpp" />
+    <ClCompile Include="BoxUI.cpp" />
+    <ClCompile Include="RenderManager.cpp" />
+    <ClCompile Include="Scene_Forest.cpp" />
+    <ClCompile Include="Scene_Info.cpp" />
+    <ClCompile Include="ScriptManager.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="DataManager.cpp" />
     <ClCompile Include="ImgClass.cpp" />
     <ClCompile Include="ImgMgr.cpp" />
+    <ClCompile Include="ItemManager.cpp" />
+    <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="NPC.cpp" />
-    <ClCompile Include="NPCRenderManager.cpp" />
+    <ClCompile Include="NPCManager.cpp" />
+    <ClCompile Include="PlayerManager.cpp" />
+    <ClCompile Include="PokeBox.cpp" />
+    <ClCompile Include="Pokedex.cpp" />
+    <ClCompile Include="Pokemon.cpp" />
+    <ClCompile Include="PokemonManager.cpp" />
     <ClCompile Include="Pokemon_win.cpp" />
+    <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="Scene_Bag.cpp" />
+    <ClCompile Include="Scene_Battle.cpp" />
+    <ClCompile Include="Scene_Dictionary.cpp" />
+    <ClCompile Include="Scene_Intro.cpp" />
+    <ClCompile Include="Scene_Main.cpp" />
+    <ClCompile Include="Scene_Menu.cpp" />
+    <ClCompile Include="Scene_Pokemon.cpp" />
+    <ClCompile Include="Scene_Report.cpp" />
+    <ClCompile Include="Scene_Setting.cpp" />
+    <ClCompile Include="Scene_Trainer.cpp" />
+    <ClCompile Include="SkillManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TextUI.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimerManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Pokemon_win.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

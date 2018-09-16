@@ -28,6 +28,84 @@
     <Filter Include="소스 파일\MapManager">
       <UniqueIdentifier>{fb9eae4f-1341-4802-a9bc-41ad9ed666c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\BattleManager">
+      <UniqueIdentifier>{dd041998-9ab8-4925-a482-867a68264a3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Skill">
+      <UniqueIdentifier>{cb2b977d-93a8-470c-845d-41b848da668c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Player">
+      <UniqueIdentifier>{a2ec293a-950e-4b89-8f30-07ad00e495d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Pokemon">
+      <UniqueIdentifier>{4cfd2c57-c9c2-4ae7-bcaa-1931a7d910c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\KeyManager">
+      <UniqueIdentifier>{b82a7c71-0b58-42aa-abe8-aa4b8896a0fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Item">
+      <UniqueIdentifier>{176e7c2a-d6c1-4069-8334-d0e44f799f6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{00daf4ac-f611-45a3-8cbb-9603338d054b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Scene_Intro">
+      <UniqueIdentifier>{cd4640c3-4266-403a-9d46-cf071f7ffb01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI">
+      <UniqueIdentifier>{c99ba52f-d301-47ed-98dd-6fb10e0b9554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Box">
+      <UniqueIdentifier>{3ec4e73f-a8e9-4669-af50-3762130b2581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Bag">
+      <UniqueIdentifier>{a46be58b-163a-4138-9a24-c98010ec12b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Battle">
+      <UniqueIdentifier>{27848b93-62f9-4854-85bf-f5e83b37a5cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Dictionary">
+      <UniqueIdentifier>{c3ae99f0-1098-4689-b0c3-0a0147faa8eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Pokemon">
+      <UniqueIdentifier>{67033a30-020b-458b-b4d6-04af7c9fdf51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Report">
+      <UniqueIdentifier>{0432b2f9-93c8-46c4-8d55-07eb80c78ec1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Setting">
+      <UniqueIdentifier>{eea2c1e2-b78a-4439-b7b3-43ebd7dd6041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Trainer">
+      <UniqueIdentifier>{826bc2df-e1c2-43ef-b6a8-e888dae91c0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Text">
+      <UniqueIdentifier>{133222a5-bdeb-4b3a-8756-0dbec4fd461c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Template">
+      <UniqueIdentifier>{d3b5d7ca-5993-424f-9043-860622470c0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Menu">
+      <UniqueIdentifier>{f757029a-f9ac-47e4-8775-8c8144d4cf27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Scene_Main">
+      <UniqueIdentifier>{f0d5c7a2-d646-4572-adad-d37b9117087a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\SoundManager">
+      <UniqueIdentifier>{0f553404-3eab-4ab5-b696-8163466574fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\UI\Scene_Info">
+      <UniqueIdentifier>{6c9feda4-b9c9-4a6b-bcd2-d87f8c6c7a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Tile">
+      <UniqueIdentifier>{06aecc87-3820-4d04-bf29-8cc3e4258a53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RenderManager">
+      <UniqueIdentifier>{6a4e8f26-d910-422d-b20f-8c4c694946c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Scene_Forest">
+      <UniqueIdentifier>{08f7e890-5ce8-48d0-8ffe-330ba9e3c0d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -45,23 +123,122 @@
     <ClInclude Include="NPC.h">
       <Filter>소스 파일\NPC</Filter>
     </ClInclude>
-    <ClInclude Include="NPC_Script.h">
-      <Filter>소스 파일\NPC</Filter>
-    </ClInclude>
-    <ClInclude Include="TemplateSingletonB.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="MapManager.h">
       <Filter>소스 파일\MapManager</Filter>
-    </ClInclude>
-    <ClInclude Include="NPCRenderManager.h">
-      <Filter>소스 파일\NPC</Filter>
     </ClInclude>
     <ClInclude Include="ImgClass.h">
       <Filter>소스 파일\Image</Filter>
     </ClInclude>
     <ClInclude Include="ImgMgr.h">
       <Filter>소스 파일\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="NPCManager.h">
+      <Filter>소스 파일\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleManager.h">
+      <Filter>소스 파일\BattleManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillManager.h">
+      <Filter>소스 파일\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>소스 파일\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="BagManager.h">
+      <Filter>소스 파일\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>소스 파일\KeyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemManager.h">
+      <Filter>소스 파일\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonManager.h">
+      <Filter>소스 파일\Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="Pokemon.h">
+      <Filter>소스 파일\Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="Pokedex.h">
+      <Filter>소스 파일\Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="Skill.h">
+      <Filter>소스 파일\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="PokeBox.h">
+      <Filter>소스 파일\Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Intro.h">
+      <Filter>소스 파일\Scene\Scene_Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Bag.h">
+      <Filter>소스 파일\Scene\UI\Scene_Bag</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Battle.h">
+      <Filter>소스 파일\Scene\UI\Scene_Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Pokemon.h">
+      <Filter>소스 파일\Scene\UI\Scene_Pokemon</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Report.h">
+      <Filter>소스 파일\Scene\UI\Scene_Report</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Setting.h">
+      <Filter>소스 파일\Scene\UI\Scene_Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Dictionary.h">
+      <Filter>소스 파일\Scene\UI\Scene_Dictionary</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Trainer.h">
+      <Filter>소스 파일\Scene\UI\Scene_Trainer</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxUI.h">
+      <Filter>소스 파일\Scene\UI\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="TextUI.h">
+      <Filter>소스 파일\Scene\UI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateSingletonA.h">
+      <Filter>소스 파일\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateSingletonB.h">
+      <Filter>소스 파일\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Menu.h">
+      <Filter>소스 파일\Scene\UI\Scene_Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Main.h">
+      <Filter>소스 파일\Scene\Scene_Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>소스 파일\SoundManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>소스 파일\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Info.h">
+      <Filter>소스 파일\Scene\UI\Scene_Info</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptManager.h">
+      <Filter>소스 파일\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>소스 파일\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>소스 파일\RenderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Forest.h">
+      <Filter>소스 파일\Scene\Scene_Forest</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -86,14 +263,111 @@
     <ClCompile Include="MapManager.cpp">
       <Filter>소스 파일\MapManager</Filter>
     </ClCompile>
-    <ClCompile Include="NPCRenderManager.cpp">
-      <Filter>소스 파일\NPC</Filter>
-    </ClCompile>
     <ClCompile Include="ImgClass.cpp">
       <Filter>소스 파일\Image</Filter>
     </ClCompile>
     <ClCompile Include="ImgMgr.cpp">
       <Filter>소스 파일\Image</Filter>
     </ClCompile>
+    <ClCompile Include="NPCManager.cpp">
+      <Filter>소스 파일\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleManager.cpp">
+      <Filter>소스 파일\BattleManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillManager.cpp">
+      <Filter>소스 파일\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerManager.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="BagManager.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>소스 파일\KeyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemManager.cpp">
+      <Filter>소스 파일\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonManager.cpp">
+      <Filter>소스 파일\Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="Pokemon.cpp">
+      <Filter>소스 파일\Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="Pokedex.cpp">
+      <Filter>소스 파일\Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="PokeBox.cpp">
+      <Filter>소스 파일\Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Intro.cpp">
+      <Filter>소스 파일\Scene\Scene_Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Bag.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Bag</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Battle.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Pokemon.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Report.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Report</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Setting.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Dictionary.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Dictionary</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Trainer.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Trainer</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxUI.cpp">
+      <Filter>소스 파일\Scene\UI\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="TextUI.cpp">
+      <Filter>소스 파일\Scene\UI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Menu.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Main.cpp">
+      <Filter>소스 파일\Scene\Scene_Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>소스 파일\SoundManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Info.cpp">
+      <Filter>소스 파일\Scene\UI\Scene_Info</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptManager.cpp">
+      <Filter>소스 파일\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>소스 파일\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>소스 파일\RenderManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Forest.cpp">
+      <Filter>소스 파일\Scene\Scene_Forest</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Pokemon_win.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

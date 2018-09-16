@@ -29,6 +29,16 @@ void TimerManager::SetFPS(unsigned long _FPS)
 	m_timer->SetFPS(_FPS);
 }
 
+void TimerManager::SetTimeUnit(float _time)
+{
+	m_time_unit = _time;
+}
+
+float TimerManager::GetTimeUnit()
+{
+	return m_time_unit;
+}
+
 float TimerManager::GetPlayTime()
 {
 	return m_timer->GetPlayTime();

@@ -1,70 +1,46 @@
 #pragma once
 #include "ImgClass.h"
-#include "NPCRenderManager.h"
-
-/*
-NPC 행동
-1. 일반 NPC
-한 방향 주시하다가 말걸면 캐릭터를 쳐다보며 스크립트 재생
-*/
-
-//NPC 기능
-enum NPC_FUNCTION 
-{
-	NONE,		//일반
-	HEAL,		//포켓몬센터
-	SHOP,		//상점
-	TRAINER,	//일반 트레이너
-	CHAMP,		//체육관 관장
-};
-
-//NPC 상태
-enum NPC_STATE
-{
-	NORMAL,		//일반
-	ENCOUNTER,	//조우
-	INTERACT,	//상호작용
-};
-
-//NPC 방향
-enum NPC_DIRECTION
-{
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT
-};
-
-//NPC 행동패턴
-enum NPC_PATTERN
-{
-	STARRING, //주시
-	TURN_ARROUND_CLOCKWISE, //주변 시계방향 빙글빙글 배회
-	TURN_ARROUND_COUNTER_CLOCKWISE, //반시계방향 배회
-	TURNING, //제자리 빙글빙글
-	RANDOM, //랜덤 행동
-};
+#include <functional>
 
 class NPC
 {
 private:
-	int m_number;			//NPC 번호
-	int m_function;			//기능
-	int m_searchDistance;	//탐색거리
-	int m_state;			//상태
-	
-	POINT m_position;		//NPC 위치좌표
-	int m_direction;
-	int m_pattern;			//NPC 패턴
-	SIZE m_moveBox;			//NPC 행동 박스크기
-	POINT m_moveBoxPosition; //행동박스 좌표
-	int m_actionDelay;
-	int m_actionCount;
+	typedef std::function<void(std::string)> StartCall;
+	typedef std::function<void()> StopCall;
+	typedef std::function<void()> NextScript;
 
-	ImgClass m_image;
+private:
+	int				m_number;			//NPC 번호
+	int				m_function;			//기능
+	int				m_searchDistance;	//탐색거리
+	int				m_state;			//상태
+	int				m_mapNumber;		//맵 번호
+	
+	POINT			m_prevPosition;
+	POINT			m_position;		//NPC 위치 타일 좌표
+	POINT			m_rootPosition;	//NPC 원 위치 좌표
+	POINT			m_realPosition;   //NPC 실제 위치 좌표
+	int				m_direction;
+	int				m_step;
+	bool			m_isMoving = false;
+	int				m_pattern;			//NPC 패턴
+	SIZE			m_moveBox;			//NPC 행동 박스크기
+	POINT			m_moveBoxPosition; //행동박스 좌표
+	float			m_animationTime;		//NPC 애니메이션 시간
+	std::string		m_scriptList[20];
+	int				m_scriptListSize = 0;
+	int				m_currentScript = 0;
+	int				m_moveCount = 0;
+	bool			isTalking = false;
+	bool			hasBattled = false;
+	bool			hasFinished = false;
 
 	int m_x_max; //맵 width
 	int m_y_max; //맵 height
+
+	StartCall onHandler;
+	StopCall stopHandler;
+	NextScript scriptHandler;
 
 private:
 	void GoLeft();
@@ -76,12 +52,31 @@ private:
 	void TurnLeft();
 	void TurnRight();
 	void DoPattern();
-	void DoScript();
-
+	void DoScript(std::string _text);
+	void StopScript();
+	bool CheckPlayer();
+	
 public:
 	NPC();
-	NPC(int _number, int _function, int _direction, int _pattern, int _searchDistance, POINT _position, SIZE _moveBoxSize);
+	NPC(int _number,int _mapNumber, int _function, int _direction, int _pattern, int _searchDistance, POINT _position, SIZE _moveBoxSize);
 	~NPC();
+
+	void SetHandler(StartCall f)
+	{
+		onHandler = std::move(f);
+	}
+
+	void SetStopHandler(StopCall f)
+	{
+		stopHandler = std::move(f);
+	}
+
+	void SetScriptHandler(NextScript f)
+	{
+		scriptHandler = std::move(f);
+	}
+
+	void GoNextScript();
 
 	int GetState()
 	{
@@ -92,19 +87,29 @@ public:
 		m_state = _state;
 	}
 
+	POINT GetRealPosition()
+	{
+		return m_realPosition;
+	}
+
+	POINT GetRootPosition()
+	{
+		return m_rootPosition;
+	}
+
 	POINT GetPosition()
 	{
 		return m_position;
 	}
 
+	SIZE GetMoveBox()
+	{
+		return m_moveBox;
+	}
+
 	void SetPosition(POINT _position)
 	{
 		m_position = _position;
-	}
-
-	void SetActionDelay(int _delay)
-	{
-		m_actionDelay = _delay;
 	}
 
 	int GetNumber()
@@ -117,28 +122,28 @@ public:
 		return m_direction;
 	}
 
-	void DoAction();
-
-	void Render(HDC _hdc)
+	void SetDirection(int _direction)
 	{
-		NPC_RENDER_MANAGER.Render(_hdc, this);
-
-		/*HDC imgDC = CreateCompatibleDC(_hdc);
-		HBITMAP bit = (HBITMAP)LoadImage(nullptr, "policesprite.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
-		HBITMAP oldbit = SelectBitmap(imgDC, bit);
-
-		BITMAP	bm = {};
-		GetObject(bit, sizeof(BITMAP), &bm);
-
-		int width = bm.bmWidth / 4;
-		int height = bm.bmHeight;
-
-		GdiTransparentBlt(_hdc, (m_position.x * 64), ((m_position.y + 1) * 64) - height, width, height, imgDC, 64 * m_direction, 0, width, height, RGB(255, 119, 251));*/
-
-		/*Rectangle(_hdc, (m_position.x * 64), (m_position.y * 64), (m_position.x * 64) + 64, (m_position.y * 64) + 64);
-		std::stringstream s;
-		s << m_direction;
-		TextOut(_hdc, (m_position.x * 64)+12, (m_position.y * 64)+12, s.str().c_str(), s.str().length());*/
+		m_direction = _direction;
 	}
+
+	int GetStep()
+	{
+		return m_step;
+	}
+
+	bool IsMoving()
+	{
+		return m_isMoving;
+	}
+
+	int GetMapNumber()
+	{
+		return m_mapNumber;
+	}
+
+	void StopNPC();
+
+	void DoAction(float _elapseTime);
 };
 
